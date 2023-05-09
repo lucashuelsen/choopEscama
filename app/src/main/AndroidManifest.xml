@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChoopEscama"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.main.view.RegisterFragment"
             android:theme="@style/Theme.ChoopEscama.NoActionBar"
@@ -26,6 +27,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".ui.main.view.LoginFragment"
+            android:theme="@style/Theme.ChoopEscama.NoActionBar"
+            android:exported="true">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

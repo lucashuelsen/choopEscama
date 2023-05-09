@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 
-class RegisterViewModel(val listener: OnCompleteListener<AuthResult>?) : ViewModel() {
+class LoginViewModel(val listener: OnCompleteListener<AuthResult>?) : ViewModel() {
     private var auth: FirebaseAuth? = null
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
@@ -39,8 +39,8 @@ class RegisterViewModel(val listener: OnCompleteListener<AuthResult>?) : ViewMod
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             //Local variables
             val viewModel = when (modelClass) {
-                RegisterViewModel::class.java -> {
-                    RegisterViewModel(listener) as T
+                LoginViewModel::class.java -> {
+                    LoginViewModel(listener) as T
                 }
                 else -> super.create(modelClass)
             }
