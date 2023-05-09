@@ -26,10 +26,11 @@ class LoginFragment : AppCompatActivity() {
 
     private fun setupSuccessListener() {
         listener = OnCompleteListener<AuthResult> {
+            mViewModel?.dataLoader?.setIsLoading(false)
+            mViewModel?.exception?.value = it.exception?.message
+
             if(it.isSuccessful){
-                Toast.makeText(this, it.exception?.message,Toast.LENGTH_LONG).show()
-            }else{
-                Toast.makeText(this, it.exception?.message,Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Conta criada com sucesso!",Toast.LENGTH_LONG).show()
             }
         }
     }
