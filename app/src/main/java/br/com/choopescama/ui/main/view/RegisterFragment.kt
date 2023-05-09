@@ -4,17 +4,17 @@ import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.com.choopescama.databinding.ActivityLoginBinding
 import androidx.databinding.DataBindingUtil
 import br.com.choopescama.R
-import br.com.choopescama.ui.main.viewmodel.LoginViewModel
+import br.com.choopescama.databinding.ActivityRegisterBinding
+import br.com.choopescama.ui.main.viewmodel.RegisterViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 
 
-class LoginFragment : AppCompatActivity() {
-    private var mBinding : ActivityLoginBinding? = null
-    private var mViewModel: LoginViewModel? = null
+class RegisterFragment : AppCompatActivity() {
+    private var mBinding : ActivityRegisterBinding? = null
+    private var mViewModel: RegisterViewModel? = null
     var listener : OnCompleteListener<AuthResult>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class LoginFragment : AppCompatActivity() {
     }
 
     private fun setupBinding(){
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_register)
         mBinding?.lifecycleOwner = this
         mBinding?.viewModel = mViewModel
     }
@@ -44,7 +44,7 @@ class LoginFragment : AppCompatActivity() {
     private fun setupViewModel(){
         mViewModel = ViewModelProvider(
             this,
-            LoginViewModel.LoginViewModelFactory(listener)
-            ).get(LoginViewModel::class.java)
+            RegisterViewModel.LoginViewModelFactory(listener)
+            ).get(RegisterViewModel::class.java)
     }
 }
